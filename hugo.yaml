@@ -15,7 +15,6 @@ pagination:
 taxonomies:
   tag: tags
   category: categories
-  author: authors
 
 markup:
   highlight:
@@ -27,7 +26,7 @@ markup:
 
 params:
   env: production
-  author: int86
+  author: Voosk
   description: "独立游戏开发者。写代码、做游戏、养狗。"
   defaultTheme: auto
   ShowReadingTime: true
@@ -57,11 +56,15 @@ menu:
       name: 文章
       url: /posts/
       weight: 10
+    - identifier: authors
+      name: 作者
+      url: /authors/
+      weight: 20
     - identifier: tags
       name: 标签
       url: /tags/
-      weight: 20
+      weight: 30
     - identifier: about
       name: 关于
       url: /about/
-      weight: 30
+      weight: 40

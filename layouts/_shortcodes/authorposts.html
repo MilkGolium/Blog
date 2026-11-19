@@ -1,0 +1,26 @@
+{{- /*
+  列出某位作者的文章：{{< authorposts "Voosk" >}}
+  说明：front matter 里用 author: "名字"（字符串）。
+*/ -}}
+{{- $name := .Get 0 -}}
+{{- $pages := slice -}}
+{{- range where site.RegularPages "Section" "posts" -}}
+  {{- $a := .Params.author -}}
+  {{- if reflect.IsSlice $a -}}
+    {{- if in $a $name }}{{ $pages = $pages | append . }}{{ end -}}
+  {{- else if eq $a $name -}}
+    {{- $pages = $pages | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- if $pages }}
+<ul class="author-posts">
+  {{- range sort $pages "Date" "desc" }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <span class="author-post-date">{{ .Date.Format "2006-01-02" }}</span>
+  </li>
+  {{- end }}
+</ul>
+{{- else }}
+<p>还没有文章。</p>
+{{- end }}

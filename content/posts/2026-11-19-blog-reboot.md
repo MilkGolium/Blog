@@ -4,7 +4,7 @@ date: 2026-11-19T18:00:00+08:00
 draft: false
 tags: ["随笔"]
 categories: ["日志"]
-author: "int86"
+author: "Voosk"
 summary: "换掉手写 HTML，改用 Hugo。服务器搬家、被墙、折腾一圈之后的一个小结。"
 ---
 
