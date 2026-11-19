@@ -1,0 +1,51 @@
+/* 中文排版微调 —— PaperMod 会自动加载本文件 */
+:root {
+  --content-gap: 1.15rem;
+  --radius: 6px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+               "Microsoft YaHei", "Source Han Sans SC", sans-serif;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+}
+
+/* 正文两端对齐：中文多的时候更整齐 */
+.post-content p,
+.post-content li {
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+/* 标题与正文的间距收紧一点 */
+.post-content h2 { margin-top: 2rem; }
+.post-content h3 { margin-top: 1.6rem; }
+
+/* 行内代码和代码块 */
+.post-content code {
+  font-size: 0.9em;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.post-content pre code {
+  font-size: 0.86em;
+  line-height: 1.6;
+}
+
+/* 引用块去掉花哨的斜体，中文斜体很难看 */
+.post-content blockquote {
+  font-style: normal;
+  border-inline-start: 3px solid var(--tertiary);
+  color: var(--secondary);
+}
+
+/* 图片圆角 + 不溢出 */
+.post-content img {
+  border-radius: var(--radius);
+  max-width: 100%;
+  height: auto;
+}
+
+/* 表格在窄屏可横向滚动 */
+.post-content table { display: block; overflow-x: auto; }

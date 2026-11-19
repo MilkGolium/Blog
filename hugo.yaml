@@ -1,0 +1,66 @@
+baseURL: "https://blog.int86.xyz/"
+title: "int86"
+theme: PaperMod
+languageCode: zh-cn
+defaultContentLanguage: zh-cn
+hasCJKLanguage: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+enableEmoji: true
+
+pagination:
+  pagerSize: 10
+
+taxonomies:
+  tag: tags
+  category: categories
+
+markup:
+  highlight:
+    noClasses: false
+    lineNos: false
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  env: production
+  author: int86
+  description: "独立游戏开发者。写代码、做游戏、养狗。"
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowWordCount: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowPostNavLinks: true
+  ShowShareButtons: false
+  ShowToc: true
+  TocOpen: false
+  mainSections:
+    - posts
+  homeInfoParams:
+    Title: "int86"
+    Content: "独立游戏开发者。在做一个叫《The Law Of Prey》的像素游戏，也在学 Rust。"
+  socialIcons:
+    - name: github
+      url: "https://github.com/MilkGolium"
+  editPost:
+    URL: "https://github.com/MilkGolium/Blog/edit/main/content"
+    Text: "编辑此页"
+    appendFilePath: true
+
+menu:
+  main:
+    - identifier: posts
+      name: 文章
+      url: /posts/
+      weight: 10
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 20
+    - identifier: about
+      name: 关于
+      url: /about/
+      weight: 30
