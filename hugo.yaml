@@ -15,6 +15,7 @@ pagination:
 taxonomies:
   tag: tags
   category: categories
+  author: authors
 
 markup:
   highlight:
