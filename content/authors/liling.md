@@ -1,10 +1,10 @@
 ---
 title: "Liling"
 hideAuthor: true
-description: "游戏策划 / 文本"
+description: "游戏策划"
 ---
 
-团队的策划，负责世界观、剧情和文本。偶尔在这里写设定笔记和开发手记。
+写上你的自我介绍吧~
 
 <!--more-->
 

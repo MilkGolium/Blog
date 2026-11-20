@@ -2,6 +2,7 @@ baseURL: "https://blog.int86.xyz/"
 title: "int86"
 theme: PaperMod
 languageCode: zh-cn
+timeZone: Asia/Shanghai
 defaultContentLanguage: zh-cn
 hasCJKLanguage: true
 enableRobotsTXT: true
