@@ -2,10 +2,12 @@
 title: "博客重开"
 date: 2026-11-19T18:00:00+08:00
 draft: false
-tags: ["随笔"]
-categories: ["日志"]
-author: "Voosk"
+slug: "reboot-20261120"
 summary: "换掉手写 HTML，改用 Hugo。服务器搬家、被墙、折腾一圈之后的一个小结。"
+tags: ["随笔"]
+categories: []
+author: "Voosk"
+ShowToc: false
 ---
 
 这个博客原来是手写的 HTML，一个 `index.html` 撑了三天。今天换成 Hugo，写文章终于只是写 Markdown 了。
