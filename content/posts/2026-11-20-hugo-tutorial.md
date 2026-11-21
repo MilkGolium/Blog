@@ -2,7 +2,7 @@
 title: "Hugo Tutorial"
 date: 2026-11-20T18:55:00+08:00
 draft: false
-slug: "hugo-tutotial-20261120"
+slug: "hugo-tutorial-20261120"
 summary: "这篇文章提供从创建页面到发布的指引。"
 tags: [入门教程]
 categories: [Hugo]
@@ -28,16 +28,16 @@ git clone <URL> .
 
 Front Matter 由 `---` 包裹，内含 Meta，下表展示了常见的 Meta。
 
-|Meta|含义|示例值|
+| Meta | 含义 | 示例值 |
 |---|---|---|
-|title|标题|"Hugo tutorial"|
-|date|日期|2026-11-20T16:58:59+08:00|
-|draft|是否为草稿|true/false|
-|slug|URL末端名称|"hugo-tutorial-20261120"|
-|summary|文章简介|"这篇文章提供从创建页面到发布的指引。"|
-|tag|标签|["Hugo", "blog"]|
-|author|作者|"Voosk"|
-|ShowToc|Show Table of contents，页面是否显示大纲|true/false|
+| title | 标题 | "Hugo tutorial" |
+| date | 日期 | 2026-11-20T16:58:59+08:00 |
+| draft | 是否为草稿 | true/false |
+| slug | URL末端名称 | "hugo-tutorial-20261120" |
+| summary | 文章简介 | "这篇文章提供从创建页面到发布的指引。" |
+| tags | 标签 | ["Hugo", "blog"] |
+| author | 作者 | "Voosk" |
+| ShowToc | Show Table of contents，页面是否显示大纲 | true/false |
 
 注意字符串类型需要加双引号。下面是一份完整的 Front Matter 示例。
 
@@ -57,7 +57,7 @@ ShowToc: true
 
 当 draft 值为 true 的时候将文章设定为草稿，仅本地预览（Debug）可见，在线（Release）不可见（如何查看本地预览请见后文）。没写完的文章标记为草稿在本地看，不要渲染到线上。
 
-slug 可以设定 URL 末端名称，例如 `http://localhost:1313/posts/hugo-tutotial-20261120/`。
+slug 可以设定 URL 末端名称，例如 `http://localhost:1313/posts/hugo-tutotial-20261120/`。有 slug 在，URL 末段是 slug 名称，没有 slug 则使用文件名。
 
 文章较长的时候可以启用 ShowToc 展示大纲；出于美观，文章较短时建议关闭它。
 
@@ -111,13 +111,33 @@ Total in 9 ms
 当你已经完成文章的撰写，并且在浏览器中确认无误，便可以发布。将本地的 git 修改推送到 GitHub 远程代码托管仓库即可，Cloudflare 会自动构建页面，稍等片刻便可以在网页上看到新文章。
 
 ## 其他内容
+
+### 在文章中使用图片或静态文件
+文章均放在 `content/posts` 下，里面除了存放单文件 markdown 文章以外，我们还可以在里面新建一个“页面包”，目录结构参考如下：
+
+```
+content/posts/
+└── 2026-11-21-my-post/
+    ├── index.md
+    ├── arch.png
+    └── screenshot.png
+```
+
+在页面包里面，markdown 文件必须命名为 index.md 。图片放置在目录里面后，便可以在文章中使用。
+
+#### 文章封面图片
+要给文章使用封面，只需要在 Front Matter 里面增加 cover-image 元数据。
+```
+cover:
+  image: "/图片路径/文件名.png"
+  alt: "图片描述"
+```
+
+需要注意的是，单文件 markdown 文档同目录下直接放图片，网页会 404 错误。原因是文章的相对路径以 URL 为基准，单文件文章没有自己的资源目录。【**此处存疑，说法也模糊，需要详细调查**】
+
+### 作者
 当前博客两位作者用户名分别为 Voosk 和 Liling。
 
-Front Matter Meta 里面 author 如果不写，Hugo 会将文章作者默认归属给 Voosk。
-
-新增作者需要在 `content/authors` 新建 markdown 文件，可以复制 `content/authors/voosk.md` 作为模板。
-
-**作者页**
 | 作者 | 页面 |
 |---|---|
 | Voosk | <https://blog.int86.xyz/authors/voosk/> |
@@ -128,7 +148,12 @@ Front Matter Meta 里面 author 如果不写，Hugo 会将文章作者默认归�
 \{\{\< authorposts "Voosk" \>\}\}
 ```
 
-**Cloudflare Pages 构建配置**
+### 元数据（meta）
+Front Matter meta 里面 author 如果不写，Hugo 会将文章作者默认归属给 Voosk。
+
+新增作者需要在 `content/authors` 新建 markdown 文件，可以复制 `content/authors/voosk.md` 作为模板。
+
+### Cloudflare Pages 构建配置
 | 项 | 值 |
 |---|---|
 | Framework preset | Hugo |
@@ -136,7 +161,7 @@ Front Matter Meta 里面 author 如果不写，Hugo 会将文章作者默认归�
 | Output directory | `public` |
 | 环境变量 | `HUGO_VERSION` = 本地 `hugo version` 的版本号 |
 
-
+### 博客主题
 主题 PaperMod 已 vendor 在 `themes/PaperMod/`，构建不依赖外部下载。
 
 ---
